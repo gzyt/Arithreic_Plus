@@ -106,10 +106,10 @@
             type : "POST",
             data : {"userpassword":userpassword},
             success: function (scoreList) {
-                // for(i=0;i<scoreList.length;i++){
-                //     xarr[i]=i+1;
-                //     arr[i]=scoreList[i],getScore();
-                // }
+                for(i=0;i<scoreList.length;i++){
+                    xarr[i]=i+1;
+                    arr[i]=scoreList[i],getScore();
+                }
             }
         })
         var chart = new Highcharts.Chart({
@@ -123,7 +123,7 @@
             },
             xAxis: {
 
-                categories:[1,2,3,4,5]
+                categories:xarr
             },
             yAxis:{
                 title:{
@@ -136,7 +136,7 @@
             },
             series: [{
                 name:"测试次数",
-                data: [50,30,80,70,50]
+                data: arr
             }]
         });
     });
